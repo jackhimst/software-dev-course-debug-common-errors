@@ -24,23 +24,23 @@ Think about which debugging methods you found most useful and how you might appl
 // Description:
 // This program is intended to display a simple prompt in the console but fails to run.
 
-console.log("Welcome to the bootcamp
+console.log("Welcome to the bootcamp");
 
 // What’s Wrong?
-
+// The parenthesis is not closed in the console.log statement. Closing the parenthesis fixes the error.
 
 // Program B
 // Description:
 // This code attempts to multiply each number in an array by 2 and display the results. However, it crashes at runtime.
 
-let numbers = [2, 4, "eight"];
+let numbers = [2, 4, 8];
 for (let i = 0; i < numbers.length; i++) {
   let doubled = numbers[i] * 2;
   console.log(doubled);
 }
 
 // What’s Wrong?
-
+// The string "eight" produces NaN when multiplied by 2. It needs to be changed to the integer data type to multiply properly.
 
 
 // Program C (Logic Error)
@@ -51,12 +51,15 @@ function isPrime(num) {
   if (num < 2) return false;
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
-      return true;  // Supposed to indicate num is NOT prime
+      return false;  // Supposed to indicate num is NOT prime
     }
   }
-  return false; // Supposed to indicate num IS prime
+  return true; // Supposed to indicate num IS prime
 }
 
 console.log(isPrime(7)); // Expected true but gets false
 
 // What’s Wrong?
+// The boolean values true and false were applied in the opposite places they were supposed to.
+// In other words, prime numbers were marked as not prime and composite numbers were marked as prime.
+// The only boolean value that was correct from the start was the first one on line 51.
